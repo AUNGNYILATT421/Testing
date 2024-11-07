@@ -25,6 +25,10 @@ function deposit(amount) {
   // Write function description
   // This function adds the amount passed as argument to balance
   // Code below this line vvvvv vvvvv vvvvv vvvvv vvvvv
+  if (amount <= 0) {
+    console.log("You cannot deposit zero amount. Try again.");
+    return;
+  }
   balance += amount;
   return balance;
   // Code above this line ^^^^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^
@@ -34,6 +38,10 @@ function withdraw(amount) {
   // Write function description
   // This function subtracts the amount passed as argument from balance
   // Code below this line vvvvv vvvvv vvvvv vvvvv vvvvv
+  if (amount > balance) {
+    console.log("Insufficient Amount. Cannot withdraw.");
+    return;
+  }
   balance -= amount;
   return balance;
   // Code above this line ^^^^^ ^^^^^ ^^^^^ ^^^^^ ^^^^^
